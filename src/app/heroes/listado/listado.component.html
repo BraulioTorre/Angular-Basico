@@ -1,0 +1,21 @@
+<p>listado de horoes!</p>
+<!--
+    heroeBorrado !== '' Yo lo hive asi;
+
+    EL NGIF Y EL nGFOR SON DIRECTIVAS PERSONALIZADAS DE ANGULAR 
+-->
+<div *ngIf="heroeBorrado; else noBorrado"> <!-- EStoy diceindo aqui si la condicion del if no se cumple entonces muestrta esa template-->
+    <h3>Heror Borrado: <small>{{heroeBorrado}}</small></h3>   
+</div>
+
+<ng-template #noBorrado><!-- # Referencias Locales se identifican por el simbolo de Numeral-->
+    <h3>No ha borrado Nada </h3>
+</ng-template>
+
+<button (click)="borarHeroe()">Borrar Heroe</button>
+
+<ul>
+    <li *ngFor="let heroes of heroesss; let i = index ">
+        {{i+1}} - {{heroes}}
+    </li>
+</ul>
